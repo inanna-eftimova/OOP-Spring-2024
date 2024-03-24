@@ -1,4 +1,4 @@
-#ifdef TASKS_COUNTED
+#ifndef TASKS_COUNTED
 #define TASKS_COUNTED
 #include <cstddef>
 

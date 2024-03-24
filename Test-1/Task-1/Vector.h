@@ -8,6 +8,8 @@ class Vector{
   Vector(int x, int y, int z);
   Vector& operator+(const Vector& other);
   Vector& operator-(const Vector& other);
+  bool operator==(const Vector& other);
+  void operator*=(const int number);
   const int magnitude() const;
   void normalize();
   void print();

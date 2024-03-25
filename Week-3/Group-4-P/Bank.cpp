@@ -3,13 +3,13 @@
 
 Bank::Bank()
     : balance(0),
-      iban(new char[1]{'\0'}),
-      name(new char[1]{'\0'}) {}
+      iban(new char[1]),
+      name(new char[1]) {}
 
 Bank::Bank(const char *iban, const char *name, float balance)
     : balance(balance),
-      iban(new char[std::strlen(iban) + 1]{'\0'}),
-      name(new char[std::strlen(name) + 1]{'\0'})
+      iban(new char[std::strlen(iban) + 1]),
+      name(new char[std::strlen(name) + 1])
 {
   std::strcpy(this->iban, iban);
   std::strcpy(this->name, name);
@@ -20,10 +20,10 @@ Bank::Bank(const Bank &other)
 {
   this->balance = other.balance;
 
-  this->iban = new char[std::strlen(other.iban) + 1]{'\0'};
+  this->iban = new char[std::strlen(other.iban) + 1];
   std::strcpy(this->iban, other.iban);
 
-  this->name = new char[std::strlen(other.name) + 1]{'\0'};
+  this->name = new char[std::strlen(other.name) + 1];
   std::strcpy(this->name, other.name);
 }
 Bank &Bank::operator=(const Bank &other)
@@ -31,10 +31,10 @@ Bank &Bank::operator=(const Bank &other)
   if (this != &other)
   {
     delete[] this->iban;
-    this->iban = new char[std::strlen(other.iban) + 1]{'\0'};
+    this->iban = new char[std::strlen(other.iban) + 1];
     std::strcpy(this->iban, other.iban);
     delete[] this->name;
-    this->name = new char[std::strlen(other.name) + 1]{'\0'};
+    this->name = new char[std::strlen(other.name) + 1];
     std::strcpy(this->name, other.name);
     this->balance = other.balance;
   }
